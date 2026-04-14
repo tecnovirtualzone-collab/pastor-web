@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agente 'Pastor' - Interfaz Web</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="assets/images/logo.png" alt="Logo Agente Pastor" class="logo">
+            <h1>Agente 'Pastor'</h1>
+            <p>Interfaz web para consultar la Biblia y los libros apócrifos</p>
+        </header>
+
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Escribe tu pregunta...">
+            <button id="search-button">Buscar</button>
+        </div>
+
+        <div class="buttons-container">
+            <button class="predefined-button" data-topic="enoc">Libro de Enoc</button>
+            <button class="predefined-button" data-topic="profecias">Profecías</button>
+            <button class="predefined-button" data-topic="versiones">Versiones</button>
+            <button class="predefined-button" data-topic="salmos">Salmos</button>
+            <button class="predefined-button" data-topic="figuras">Figuras Bíblicas</button>
+        </div>
+
+        <div class="response-container" id="response-container">
+            <p>Escribe una pregunta o selecciona un tema para ver la respuesta aquí.</p>
+        </div>
+
+        <div class="history-container" id="history-container">
+            <h3>Historial de Conversaciones</h3>
+            <ul id="history-list"></ul>
+        </div>
+
+        <div class="actions-container">
+            <button id="download-button">Descargar Respuesta</button>
+            <button id="clear-button">Limpiar Historial</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
