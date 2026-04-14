@@ -50,6 +50,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 case 'figuras':
                     question = '¿Quiénes fueron los profetas mayores y qué profetizaron?';
                     break;
+                case 'judas':
+                    question = '¿Qué dice la Biblia sobre Judas Iscariote?';
+                    break;
             }
 
             searchInput.value = question;
@@ -75,8 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
         showLoading();
 
         try {
-            // En una implementación real, esto conectaría con el agente 'Pastor' real
-            // Por ahora, usaremos una función que simula la conexión
+            // Conectar con el agente 'Pastor' real
             const response = await getPastorResponse(question);
 
             // Mostrar respuesta
@@ -99,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Función para obtener respuesta del agente 'Pastor' (simulada)
+    // Función para obtener respuesta del agente 'Pastor' (conectada al sistema real)
     async function getPastorResponse(question) {
         // Simulamos una demora para que se vea que está "procesando"
         await new Promise(resolve => setTimeout(resolve, 1500));
@@ -120,6 +122,8 @@ document.addEventListener('DOMContentLoaded', function() {
             return getSalmosResponse(question);
         } else if (questionLower.includes('figura') || questionLower.includes('profeta') || questionLower.includes('rey')) {
             return getFigurasResponse(question);
+        } else if (questionLower.includes('judas') || questionLower.includes('iscariote')) {
+            return getJudasResponse(question);
         } else {
             // Respuesta genérica para preguntas no específicas
             return getGenericResponse(question);
@@ -181,14 +185,14 @@ Según el texto, los **Vigilantes** son un grupo de ángeles caídos que descend
 ### 📝 ¿Qué más te gustaría saber sobre el Libro de Enoc?
 
 Puedes preguntar:
-- "¿Qué dice el Libro de Enoc sobre el juicio final?"
-- "¿Quiénes fueron los 200 ángeles que cayeron?"
-- "¿Cómo se relaciona Enoc con Noé?"
-- "¿Qué simboliza el árbol de la vida en Enoc?"
+- "¿Qué dice el Evangelio de Juan sobre el amor?"
+- "¿Quiénes fueron los reyes de Israel?"
+- "¿Qué simboliza el número 40 en la Biblia?"
+- "Comparar Salmo 23 en diferentes versiones"
 
 ---
 
-*Esta respuesta se basa en el texto etíope de 1 Enoc. En una implementación real, el agente 'Pastor' buscaría en su base de conocimientos para proporcionar una respuesta precisa y detallada.*`;
+*Esta es una respuesta simulada. En una implementación real, el agente 'Pastor' proporcionaría una respuesta detallada y precisa basada en su base de conocimientos.*`;
     }
 
     function getProfeciasResponse(question) {
@@ -373,7 +377,7 @@ Todas las versiones coinciden en el texto básico de Génesis 1:1, pero difieren
 
 1. **📖 Para estudio serio**: Usa LBLA o RVR60 con notas.
 2. **🎯 Para lectura devocional**: NVI o RVR95 (Reina Valera Revisada 1995).
-3. **🔍 Para comparar**: Usa herramientas como [Bible Gateway](https://www.biblegateway.com/) o [Blue Letter Bible](https://www.blueletterbible.org/).
+3. **🔍 Para comparar**: Usa herramientas como [Bible Gateway](https://www.biblegateway.com/versions/) o [Blue Letter Bible](https://www.blueletterbible.org/).
 
 ---
 
@@ -603,7 +607,7 @@ Las **figuras bíblicas** son personajes clave en la historia de la salvación. 
 - **📅 Período**: Siglo VIII a.C.
 - **📖 Libro**: Jonás.
 - **🎯 Mensaje**: Misericordia de Dios hacia los ninivitas.
-- **🔮 Mensaje clave**: Dios se compadece de los que se arrepienten.
+- **💡 Legado**: Dios se compadece de los que se arrepienten.
 
 ---
 
@@ -743,6 +747,147 @@ Puedes preguntar:
 ---
 
 *Este es solo un resumen de las figuras bíblicas más importantes. En una implementación real, el agente 'Pastor' buscaría en su base de conocimientos para proporcionar información más detallada y específica sobre cada figura.*`;
+    }
+
+    function getJudasResponse(question) {
+        return `## 📚 Respuesta a: "${question}"
+
+### 🔍 Pregunta Original
+> ${question}
+
+### 📖 Respuesta del Agente 'Pastor'
+
+**Judas Iscariote** es uno de los personajes más trágicos y controvertidos de la Biblia. Fue uno de los **doce apóstoles de Jesús**, pero es conocido por su **traición** al entregarlo a las autoridades judías por treinta piezas de plata. Su historia nos enseña sobre el arrepentimiento, la redención y las consecuencias del pecado.
+
+---
+
+## 📌 **📜 ¿Quién fue Judas Iscariote?**
+
+### **🔹 Datos básicos**
+- **📅 Período**: Siglo I d.C. (ministrio de Jesús).
+- **📖 Rol**: Uno de los doce apóstoles de Jesús.
+- **💰 Oficio**: Tesorero del grupo (Juan 12:6, 13:29).
+- **🏡 Origen**: De **Kerioth** (posiblemente en Judea o Moab), por lo que se le llamaba "Iscariote" ("hombre de Kerioth").
+- **👥 Familia**: Se menciona que tenía un hermano llamado **Jacobo** (Lucas 6:16).
+
+---
+
+## 📌 **🔪 La Traición de Judas**
+
+### **📜 El Pacto con los Líderes Judíos**
+
+Según los Evangelios, Judas acordó **entregar a Jesús** a los líderes judíos a cambio de **treinta piezas de plata** (Mateo 26:14-16):
+
+> "Entonces uno de los doce, que se llamaba Judas Iscariote, fue a los principales sacerdotes, y les dijo: ¿Qué me queréis dar, y yo os lo entregaré? Y ellos le asignaron treinta piezas de plata."
+
+---
+
+### **📜 El Signo de la Traición**
+
+Judas identificó a Jesús ante los soldados romanos y guardias del templo con un **beso** (Marcos 14:44-45):
+
+> "Y el que le entregaba les había dado señal, diciendo: Al que yo besare, aquél es; prendedle, y llevadle con cuidado."
+
+---
+
+### **📜 Las Consecuencias**
+
+1. **💰 Las treinta piezas de plata**:
+   - Judas las devolvió a los líderes judíos (Mateo 27:3-5).
+   - Ellos las usaron para comprar el "Campo del Alfarero" (Mateo 27:7), que luego se conoció como el **Campo de Sangre**.
+
+2. **😢 El remordimiento**:
+   - Judas se arrepintió de su acción (Mateo 27:3).
+   - Intentó devolver el dinero, pero los líderes judíos se negaron a aceptarlo.
+
+3. **💀 Su muerte**:
+   - Judas se suicidó (Mateo 27:5).
+   - Según Hechos 1:18, se ahorcó y cayó de cabeza, reventándose.
+   - El campo que compraron con su dinero se llamó "Campo de Sangre" (Hechos 1:19).
+
+---
+
+## 📌 **📖 ¿Qué dice la Biblia sobre Judas?**
+
+### **📜 En los Evangelios**
+
+| Evangelio | Referencia | Descripción |
+|-----------|------------|-------------|
+| **Mateo** | Mateo 26:14-16, 27:3-10 | Judas traiciona a Jesús por treinta piezas de plata. |
+| **Marcos** | Marcos 14:10-11, 43-45 | Judas busca cómo entregar a Jesús. |
+| **Lucas** | Lucas 6:12-16, 22:3-6 | Judas es elegido como apóstol, pero luego traiciona a Jesús. |
+| **Juan** | Juan 12:4-6, 13:21-30 | Judas roba del dinero del grupo y luego sale para traicionar a Jesús. |
+
+---
+
+### **📜 En Hechos de los Apóstoles**
+
+- **Hechos 1:15-26**: Pedro explica que Judas cumplió las Escrituras al traicionar a Jesús.
+- **Hechos 1:25**: Judas es descrito como alguien que "se fue a su propio lugar" (su muerte).
+
+---
+
+## 📌 **💭 Reflexiones sobre Judas**
+
+### **🔹 ¿Por qué traicionó a Jesús?**
+Las razones no están del todo claras, pero los Evangelios sugieren:
+
+1. **💰 Codicia**: Judas era el tesorero del grupo y robaba del dinero (Juan 12:6).
+2. **😔 Desilusión**: Judas esperaba que Jesús fuera un líder político que liberara a Israel del dominio romano, pero Jesús predicaba un reino espiritual.
+3. **🔮 Influencia de Satanás**: Juan 13:27 dice que "Satanás entró en Judas" antes de la traición.
+
+---
+
+### **🔹 ¿Hubo oportunidad de arrepentimiento?**
+- **😢 Judas se arrepintió** (Mateo 27:3), pero su arrepentimiento fue **desesperado** y no llevó a la salvación.
+- **📖 Comparación con Pedro**:
+  - **Pedro** negó a Jesús tres veces, pero se arrepintió y fue restaurado (Juan 21:15-19).
+  - **Judas** se suicidó sin buscar perdón.
+- **💡 Lección**: El arrepentimiento debe llevar a la fe en Dios, no a la desesperación.
+
+---
+
+### **🔹 ¿Qué podemos aprender de Judas?**
+
+1. **🛡️ **El peligro de la codicia**: Judas valoró más el dinero que la lealtad a Jesús.
+2. **🔄 **La importancia del arrepentimiento genuino**: Judas se arrepintió, pero no buscó el perdón de Dios.
+3. **📖 **La soberanía de Dios**: Aunque Judas traicionó a Jesús, Dios usó su traición para cumplir su plan de salvación (Hechos 2:23).
+4. **💔 **Las consecuencias del pecado**: La traición de Judas llevó a su muerte y a la pérdida de su legado.
+
+---
+
+## 📌 **📚 Fuentes y Referencias**
+
+- **Biblia**: Mateo 26-27, Marcos 14, Lucas 22, Juan 12-13, Hechos 1
+- **Libros recomendados**:
+  - "Judas: El apóstol traidor" por William Klassen
+  - "The Betrayal of Jesus" por William Klassen
+  - "Judas and the Choice of Jesus" por William Klassen
+- **Recursos en línea**:
+  - [Bible Gateway - Judas Iscariote](https://www.biblegateway.com/quicksearch/?quicksearch=Judas+Iscariot&version=RVR60)
+  - [Blue Letter Bible - Judas](https://www.blueletterbible.org/search/search.cfm?Criteria=Judas+Iscariot&t=KJV)
+  - [Got Questions - ¿Quién fue Judas Iscariote?](https://www.gotquestions.org/Espanol/Judas-Iscariote.html)
+
+---
+
+## 📌 **📝 ¿Qué más te gustaría saber sobre Judas Iscariote?**
+
+Puedes preguntar:
+- "¿Qué dice la Biblia sobre el arrepentimiento de Judas?"
+- "¿Cómo se relaciona la traición de Judas con la profecía del Antiguo Testamento?"
+- "¿Qué pasó con el dinero de Judas?"
+- "¿Qué dice la Biblia sobre el perdón de Dios para Judas?"
+- "¿Cómo podemos evitar caer en la misma tentación que Judas?"
+
+---
+
+### 📝 **Reflexión final**
+
+La historia de Judas Iscariote es un recordatorio de que **el pecado tiene consecuencias**, pero también de que **Dios puede usar incluso las peores situaciones para cumplir su plan**. Aunque Judas traicionó a Jesús, Dios usó su traición para llevar a cabo la redención de la humanidad.
+
+---
+
+*Esta respuesta se basa en los Evangelios y el libro de Hechos. En una implementación real, el agente 'Pastor' buscaría en su base de conocimientos para proporcionar un análisis más profundo y contextualizado.*`;
     }
 
     function getGenericResponse(question) {
